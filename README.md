@@ -28,9 +28,67 @@ body row sample data:
 }
 ```
 
+#### Response
+```json
+{
+    "message": "Parking spot is not available for van!",
+    "vehicle": {
+        "id": 2,
+        "type": "van",
+        "license_plate": "Facere.",
+        "created_at": "2024-05-27T14:59:24.000000Z",
+        "updated_at": "2024-05-27T14:59:24.000000Z"
+    }
+}
+```
+#### Request to park car 
+```json
+{
+    "park": true,
+    "vehicle": {
+        "type": "car",
+        "license_plate": "TEST2"
+    }
+}
+```
+
+```json
+{
+    "data": {
+        "id": 5,
+        "is_available": false,
+        "parking_lot_id": 1,
+        "spot_type": "car",
+        "parking_lot": null,
+        "vehicle": {
+            "id": 16,
+            "type": "car",
+            "license_plate": "TEST",
+            "created_at": "2024-05-28T04:16:24.000000Z",
+            "updated_at": "2024-05-28T04:16:24.000000Z"
+        }
+    }
+}
+```
+
+
 ### UnPark
 ```json
 {
     "park": false
+}
+```
+
+#### Response
+```json
+{
+    "data": {
+        "id": 5,
+        "is_available": true,
+        "parking_lot_id": 1,
+        "spot_type": "car",
+        "parking_lot": null,
+        "vehicle": null
+    }
 }
 ```
